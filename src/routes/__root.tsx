@@ -124,11 +124,13 @@ function RootComponent() {
         
         {/* 🟢 Top Navigation Bar */}
         <header className="z-50 mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-5">
-          {/* EYFI Logo */}
+          {/* Custom Image Logo with Mix-Blend-Screen to hide the black background */}
           <a href="/" className="group flex items-center gap-2">
-            <span className="text-[#ccff00] drop-shadow-[0_0_12px_rgba(204,255,0,0.4)] text-3xl font-black italic tracking-tighter">
-              EYFI
-            </span>
+            <img 
+              src="/eyfilogo.png" 
+              alt="EYFI" 
+              className="h-10 w-auto object-contain mix-blend-screen" 
+            />
           </a>
 
           {/* Navigation Links & Action Button */}
@@ -153,8 +155,7 @@ function RootComponent() {
             </a>
           </nav>
         </header>
-
-        <main className="mx-auto w-full max-w-7xl flex-1 px-4 py-8">
+        <main className="mx-auto w-full max-w-7xl flex-1 px-4 py-8 relative">
           {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
           <Outlet />
         </main>
