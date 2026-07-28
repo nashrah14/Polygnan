@@ -25,7 +25,8 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <main className="min-h-screen bg-[#0B0B0B]">
+    // Changed bg-[#0B0B0B] to bg-transparent so the global dots show through
+    <main className="min-h-screen w-full bg-transparent relative">
       <RewardLadder />
     </main>
   );
