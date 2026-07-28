@@ -14,7 +14,7 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 
 function NotFoundComponent() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-4">
+    <div className="flex min-h-screen items-center justify-center bg-transparent px-4">
       <div className="max-w-md text-center">
         <h1 className="text-7xl font-bold text-foreground">404</h1>
         <h2 className="mt-4 text-xl font-semibold text-foreground">Page not found</h2>
@@ -42,7 +42,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   }, [error]);
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-4">
+    <div className="flex min-h-screen items-center justify-center bg-transparent px-4">
       <div className="max-w-md text-center">
         <h1 className="text-xl font-semibold tracking-tight text-foreground">
           This page didn't load
@@ -119,8 +119,46 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <Outlet />
+      {/* New Layout Wrapper with bg-transparent so the body dots show through */}
+      <div className="flex min-h-screen w-full flex-col bg-transparent font-sans text-white selection:bg-[#ccff00] selection:text-black">
+        
+        {/* 🟢 Top Navigation Bar */}
+        <header className="z-50 mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-5">
+          {/* EYFI Logo */}
+          <a href="/" className="group flex items-center gap-2">
+            <span className="text-[#ccff00] drop-shadow-[0_0_12px_rgba(204,255,0,0.4)] text-3xl font-black italic tracking-tighter">
+              EYFI
+            </span>
+          </a>
+
+          {/* Navigation Links & Action Button */}
+          <nav className="flex items-center gap-8 text-sm font-semibold">
+            <a
+              href="#how-it-works"
+              className="text-gray-300 transition-colors hover:text-[#ccff00]"
+            >
+              How it works
+            </a>
+            <a
+              href="#prizes"
+              className="text-gray-300 transition-colors hover:text-[#ccff00]"
+            >
+              Prizes
+            </a>
+            <a
+              href="#join"
+              className="bg-[#ccff00] hover:shadow-[0_0_20px_rgba(204,255,0,0.6)] text-black transform rounded-full px-6 py-2 font-bold transition-all hover:-translate-y-0.5 hover:bg-[#b8e600]"
+            >
+              JOIN
+            </a>
+          </nav>
+        </header>
+
+        <main className="mx-auto w-full max-w-7xl flex-1 px-4 py-8">
+          {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
+          <Outlet />
+        </main>
+      </div>
     </QueryClientProvider>
   );
 }
