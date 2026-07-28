@@ -138,7 +138,11 @@
   }
 
   body {
-    background-color: var(--color-background);
+    background-color: #0d0d0d; 
+ 
     color: var(--color-foreground);
+
+    background-image: radial-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+    background-size: 20px 20px;
   }
 }
