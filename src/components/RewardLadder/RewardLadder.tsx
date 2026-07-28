@@ -18,22 +18,11 @@ export default function RewardLadder({ ctaHref = "#apply" }: Props) {
   return (
     <section
       aria-labelledby="reward-ladder-heading"
-      className="relative isolate overflow-hidden bg-[#0B0B0B] py-24 text-white sm:py-32"
+      // 1. Changed bg-[#0B0B0B] to bg-transparent so the global dots show through
+      className="relative isolate overflow-hidden bg-transparent py-24 text-white sm:py-32"
     >
-      {/* dotted background */}
-      <div
-        className="pointer-events-none absolute inset-0 opacity-[0.35]"
-        style={{
-          backgroundImage:
-            "radial-gradient(rgba(255,255,255,0.08) 1px, transparent 1px)",
-          backgroundSize: "22px 22px",
-          maskImage:
-            "radial-gradient(ellipse at center, black 40%, transparent 85%)",
-          WebkitMaskImage:
-            "radial-gradient(ellipse at center, black 40%, transparent 85%)",
-        }}
-        aria-hidden
-      />
+      {/* 2. Removed the redundant local dotted background that was causing the condensed look */}
+      
       {/* ambient neon glows */}
       <div
         className="pointer-events-none absolute -top-40 left-1/2 h-[520px] w-[820px] -translate-x-1/2 rounded-full"
