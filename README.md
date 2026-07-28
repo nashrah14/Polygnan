@@ -1,29 +1,38 @@
-# Welcome to your Lovable project
+# 🚀 EYFI Campus Ambassador Platform - Reward Ladder
 
-This project was built with [Lovable](https://lovable.dev).
+## 📌 Technical Overview
+A production-ready, interactive "Reward Ladder" component engineered for the EYFI Campus Ambassador landing page. This project demonstrates proficiency in modern frontend architecture, state-driven animations, and responsive UI design. 
 
-## Build with Lovable
+The application was developed with a strict focus on a minimalist aesthetic, ensuring a clean, professional user experience while seamlessly integrating dynamic, gaming-inspired elements (dark mode, neon accents, and gamified micro-interactions).
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
+## 🏗️ Engineering Highlights
 
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+* **Component-Driven Architecture:** Built with a highly modular design, strictly separating the `RewardLadder` layout container, `RewardCard` milestone UI, and configuration logic (`data.js`) for maximum scalability and maintainability.
+* **Advanced State & Animations:** Leveraged Framer Motion for smooth, scroll-triggered view animations and utilized React state to manage interactive, gamified elements like pulsing nodes, dynamic hover states, and milestone confetti.
+* **Responsive Layout Strategy:** Implemented a complex alternating timeline layout for desktop environments that fluidly adapts into a stacked, vertical progression system for mobile screens without compromising visual hierarchy.
+* **Modern Routing:** Utilized TanStack Router for a robust, scalable file-based routing architecture (`__root.tsx`) to manage the application tree efficiently.
 
-## Development
+## 💻 Tech Stack
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+* **Core:** React 18, TypeScript, Vite
+* **Styling & UI:** Tailwind CSS (Custom utility configuration, Glassmorphism)
+* **Motion & Interactions:** Framer Motion, Canvas Confetti
+* **Icons:** Lucide React
+* **Routing:** TanStack Router
 
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
+## 📂 Architectural Structure
+
+```text
+├── public/                 # Static branding assets and dynamic favicons
+├── src/
+│   ├── components/         # Reusable, isolated UI components (RewardCard, ProgressLine)
+│   ├── data/               # Decoupled milestone configuration data
+│   ├── routes/             # File-based routing logic (__root.tsx)
+│   └── server.ts           # App and server configuration
+├── tailwind.config.js      # Custom theme, animations, and utility configurations
+├── tsconfig.json           # Strict TypeScript configuration
+└── vite.config.ts          # Build optimization settings
 ```
 
-## Built with
-
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
+# Developed By: 
+## Nashrah Fathima
