@@ -119,44 +119,44 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      {/* New Layout Wrapper with bg-transparent so the body dots show through */}
       <div className="flex min-h-screen w-full flex-col bg-transparent font-sans text-white selection:bg-[#ccff00] selection:text-black">
         
-        {/* 🟢 Top Navigation Bar */}
-        <header className="z-50 mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-5">
-          {/* Custom Image Logo with Mix-Blend-Screen to hide the black background */}
-          <a href="/" className="group flex items-center gap-2">
-            <img 
-              src="/eyfilogo.png" 
-              alt="EYFI" 
-              className="h-10 w-auto object-contain mix-blend-screen" 
-            />
-          </a>
+        {/* 🟢 FIXED Navigation Bar Container */}
+        <div className="fixed top-0 left-0 right-0 z-50 flex w-full justify-center bg-black/60 backdrop-blur-md border-b border-white/5">
+          <header className="mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-4">
+            {/* Custom Image Logo */}
+            <a href="/" className="group flex items-center gap-2">
+              <img 
+                src="/eyfilogo.png" 
+                alt="EYFI" 
+                className="h-10 w-auto object-contain mix-blend-screen" 
+              />
+            </a>
 
-          {/* Navigation Links & Action Button */}
-          <nav className="flex items-center gap-8 text-sm font-semibold">
-            <a
-              href="#how-it-works"
-              className="text-gray-300 transition-colors hover:text-[#ccff00]"
-            >
-              How it works
-            </a>
-            <a
-              href="#prizes"
-              className="text-gray-300 transition-colors hover:text-[#ccff00]"
-            >
-              Prizes
-            </a>
-            <a
-              href="#join"
-              className="bg-[#ccff00] hover:shadow-[0_0_20px_rgba(204,255,0,0.6)] text-black transform rounded-full px-6 py-2 font-bold transition-all hover:-translate-y-0.5 hover:bg-[#b8e600]"
-            >
-              JOIN
-            </a>
-          </nav>
-        </header>
-        <main className="mx-auto w-full max-w-7xl flex-1 px-4 py-8 relative">
-          {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
+            {/* Navigation Links */}
+            <nav className="flex items-center gap-8 text-sm font-semibold">
+              <a
+                href="#how-it-works"
+                className="text-gray-300 transition-colors hover:text-[#ccff00]"
+              >
+                How it works
+              </a>
+              <a
+                href="#prizes"
+                className="text-gray-300 transition-colors hover:text-[#ccff00]"
+              >
+                Prizes
+              </a>
+              <a
+                href="#join"
+                className="bg-[#ccff00] hover:shadow-[0_0_20px_rgba(204,255,0,0.6)] text-black transform rounded-full px-6 py-2 font-bold transition-all hover:-translate-y-0.5 hover:bg-[#b8e600]"
+              >
+                JOIN
+              </a>
+            </nav>
+          </header>
+        </div>
+        <main className="mx-auto w-full max-w-7xl flex-1 px-4 pt-24 pb-8 relative">
           <Outlet />
         </main>
       </div>
