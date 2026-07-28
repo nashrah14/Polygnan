@@ -34,5 +34,5 @@ The application was developed with a strict focus on a minimalist aesthetic, ens
 └── vite.config.ts          # Build optimization settings
 ```
 
-# Developed By: 
+### Developed By: 
 ## Nashrah Fathima
